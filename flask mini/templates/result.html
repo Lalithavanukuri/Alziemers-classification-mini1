@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alzheimer's Disease Classification Result</title>
+    <style>
+		body {
+                background-image: url('static/results bg.gif');
+                background-repeat: no-repeat;
+                background-size: cover;
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			background-color: #f2f2f2;
+		}
+		.container {
+			margin-top: 50px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		h1 {
+			font-size: 36px;
+			font-weight: bold;
+			color: #f2f2f2;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+		h2 {
+			font-size: 24px;
+			font-weight: bold;
+			color: #f2f2f2;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+		h3 {
+			font-size: 24px;
+			font-weight: bold;
+			color: #f2f2f2;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+		h4 {
+			
+			font-size: 24px;
+			font-weight: bold;
+			color: #f2f2f2;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+		p {
+			font-size: 18px;
+			color: #f2f2f2;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		.result {
+			font-size: 24px;
+			font-weight: bold;
+			color: #FFF;
+			background-color: #4CAF50;
+			padding: 20px;
+			border-radius: 10px;
+			margin-bottom: 20px;
+		}
+		.btn {
+			font-size: 18px;
+			font-weight: bold;
+			color: #FFF;
+			background-color: #4CAF50;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.btn:hover {
+			background-color: #4CAF50;
+		}
+	</style>
+</head>
+
+<body>
+    <div class="container">
+		<h1>Alzheimer's Disease Classification Result</h1>
+        <style>
+            body {
+                background-image: url('static/results bg.gif');
+                background-repeat: no-repeat;
+                background-size: cover;
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+		<h2>Stage Detection</h2>
+        <h4>Predicted Class: {{ class_name }}</p>
+        <h4>Confidence: {{ confidence }}</p>
+
+		{% if class_name == "Final AD JPEG" %}
+            <h3>Stage: Alzheimer's Disease</p>
+        {% elif class_name == "Final CN JPEG" %}
+            <h3>Stage: Cognitive Normal</p>
+        {% elif class_name == "Final EMCI JPEG" %}
+            <h3>Stage: Early Mild Cognitive Impairment</p>
+        {% elif class_name == "Final LMCI JPEG" %}
+            <h3>Stage: Late Mild Cognitive Impairment</p>
+        {% elif class_name == "Final MCI JPEG" %}
+            <h3>Stage: Moderate Cognitive Impairment</p>
+        {% else %}
+            <h3>Unknown Stage</p>
+        {% endif %}
+		
+		<form action="{{ url_for('home') }}">
+			<button class="btn" type="submit">Upload Another Image</button>
+		</form>
+    </div>
+</body>
+</html>

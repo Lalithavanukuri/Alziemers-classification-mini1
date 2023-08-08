@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alzheimr's Disease Detection</title>
+    <style>
+         body {
+            background-image: url('static/brain background gif.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+        
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Alzheimer's Disease Detection</h1>
+        <style>
+            body {
+            background-image: url('static/brain background gif.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+            </style>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png">
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+</body>
+</html>
